@@ -15,13 +15,16 @@ import {
   AppTableBody,
   AppToggleStatus,
   AppTitleWrapper,
-  AppCategoryCard,
 } from '@/components';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/utils/hooks';
 import { Pencil, Settings } from 'lucide-react';
 import { setCategories } from '@/features/category.slice';
-import { AppAddEditCategory, AppCategorySearch } from '@/pages';
+import {
+  AppAddEditCategory,
+  AppCategoryCard,
+  AppCategorySearch,
+} from '@/pages';
 import { serialNo } from '@/utils/functions';
 import AppTooltip from '@/components/app/shared/AppTooltip';
 

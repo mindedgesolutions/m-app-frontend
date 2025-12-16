@@ -12,3 +12,5 @@ export { default as AppCategorySearch } from '@/pages/app/categories/AppCategory
 export { default as AppAddListSubcategories } from '@/pages/app/categories-sub/AppListSubcategories';
 export { default as AppAddEditSubcategory } from '@/pages/app/categories-sub/AppAddEditSubcategory';
 export { default as AppSubcategorySearch } from '@/pages/app/categories-sub/AppSubcategorySearch';
+export { default as AppCategoryCard } from '@/pages/app/categories/AppCategoryCard';
+export { default as AppSubcategoryCard } from '@/pages/app/categories-sub/AppSubcategoryCard';

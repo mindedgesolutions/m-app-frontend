@@ -15,17 +15,21 @@ import {
   AppTableBody,
   AppToggleStatus,
   AppTitleWrapper,
-  AppCategoryCard,
 } from '@/components';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/utils/hooks';
 import { Pencil, Settings } from 'lucide-react';
 import { setCategories, setSubcategories } from '@/features/category.slice';
-import { AppSubcategorySearch, AppAddEditSubcategory } from '@/pages';
+import {
+  AppSubcategorySearch,
+  AppAddEditSubcategory,
+  AppSubcategoryCard,
+} from '@/pages';
 import { serialNo } from '@/utils/functions';
 import type { Store } from '@reduxjs/toolkit';
 import type { RootState } from '@/store';
 import AppTooltip from '@/components/app/shared/AppTooltip';
+import { unsetSearchText } from '@/features/common.slice';
 
 const description =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid, est tempora necessitatibus aspernatur quam reiciendis numquam consequatur aut tempore, repellat, perspiciatis explicabo laborum qui?';
@@ -71,6 +75,10 @@ const AppListSubcategories = () => {
       }
     };
     fetchData();
+
+    return () => {
+      dispatch(unsetSearchText());
+    };
   }, [page, searchTerm, counter]);
 
   return (
@@ -117,7 +125,7 @@ const AppListSubcategories = () => {
                           description={category.description}
                         />
                       </div>
-                      <AppCategoryCard id={category.id} type="subcategory" />
+                      <AppSubcategoryCard id={category.id} />
                     </div>
                   </TableCell>
                   <TableCell>

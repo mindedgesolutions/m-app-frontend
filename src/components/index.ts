@@ -16,4 +16,3 @@ export { default as AppTableBody } from '@/components/app/shared/AppTableBody';
 export { default as AppToggleStatus } from '@/components/app/shared/AppToggleStatus';
 export { default as AppDelete } from '@/components/app/shared/AppDelete';
 export { default as AppTitleWrapper } from '@/components/app/wrappers/AppTitleWrapper';
-export { default as AppCategoryCard } from '@/components/app/shared/AppCategoryCard';
