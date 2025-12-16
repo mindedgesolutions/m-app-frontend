@@ -14,3 +14,6 @@ export { default as AppAddEditSubcategory } from '@/pages/app/categories-sub/App
 export { default as AppSubcategorySearch } from '@/pages/app/categories-sub/AppSubcategorySearch';
 export { default as AppCategoryCard } from '@/pages/app/categories/AppCategoryCard';
 export { default as AppSubcategoryCard } from '@/pages/app/categories-sub/AppSubcategoryCard';
+export { default as AppListProducts } from '@/pages/app/products/AppListProducts';
+export { default as AppProductSearch } from '@/pages/app/products/AppProductSearch';
+export { default as AppAddEditProduct } from '@/pages/app/products/AppAddEditProduct';

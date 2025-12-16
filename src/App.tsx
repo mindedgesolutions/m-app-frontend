@@ -28,6 +28,8 @@ const router = createBrowserRouter([
             element: <m.AppAddListSubcategories />,
             loader: ld.appSubcategoryLoader(store),
           },
+          { path: 'products', element: <m.AppListProducts /> },
+          { path: 'product/:slug?', element: <m.AppAddEditProduct /> },
         ],
       },
     ],

@@ -1,5 +1,6 @@
 import { Users } from 'lucide-react';
-import { BiCategory, BiWrench, BiCog } from 'react-icons/bi';
+import { BiCategory, BiCog } from 'react-icons/bi';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 
 export const data: AdminMenuProps[] = [
   {
@@ -76,8 +77,8 @@ export const settings: AdminMenuProps[] = [
     ],
   },
   {
-    title: 'Service Details',
-    icon: BiWrench,
-    url: '/admin/settings/service-details',
+    title: 'Products',
+    icon: MdOutlineShoppingCart,
+    url: '/admin/settings/products',
   },
 ];

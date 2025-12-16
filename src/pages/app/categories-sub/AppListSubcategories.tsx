@@ -132,7 +132,7 @@ const AppListSubcategories = () => {
                     <AppToggleStatus
                       setLoading={setLoading}
                       status={category.is_active}
-                      api={`/admin/categories/toggle-status/${category.id}`}
+                      api={`/admin/sub-categories/toggle-status/${category.id}`}
                     />
                   </TableCell>
                   <TableCell>
