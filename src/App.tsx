@@ -32,7 +32,7 @@ const router = createBrowserRouter([
           {
             path: 'product/:slug?',
             element: <m.AppAddEditProduct />,
-            loader: ld.appProductLoader(store),
+            loader: ld.appProductLoader,
           },
         ],
       },

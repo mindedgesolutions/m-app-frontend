@@ -28,6 +28,10 @@ interface PaginationProps {
   addClass?: string;
 }
 
+interface ApiResponse<T> {
+  data: T;
+}
+
 interface EditFormProps {
   editId?: number | null;
   setEditId?: React.Dispatch<React.SetStateAction<number | null>>;

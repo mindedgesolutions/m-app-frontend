@@ -81,7 +81,9 @@ const AppListProducts = () => {
           />
           <div className="my-4 mb-2">
             <Link to={`/admin/settings/product`}>
-              <Button>Add new</Button>
+              <Button size={'sm'} className="text-xs">
+                Add new
+              </Button>
             </Link>
           </div>
           <Table className="text-xs font-inter">

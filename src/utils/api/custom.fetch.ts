@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { type AxiosInstance } from 'axios';
 import { tokenManager } from './token.manager';
 import { refreshToken } from './auth.api';
 import { userManager } from './user.manager';
@@ -15,7 +15,7 @@ const processQueue = (error: any, token: string | null = null) => {
   failedQueue = [];
 };
 
-export const customFetch = axios.create({
+export const customFetch: AxiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_URL}/api`,
   withCredentials: true,
 });

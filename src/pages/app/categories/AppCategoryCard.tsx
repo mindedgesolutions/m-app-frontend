@@ -36,9 +36,13 @@ const AppCategoryCard = ({ id }: { id: number }) => {
               {category?.name}
             </section>
           </div>
-          {category?.description && (
+          {category?.description ? (
             <div className="font-inter font-medium text-xs text-muted-foreground">
               {category?.description}
+            </div>
+          ) : (
+            <div className="font-inter italic font-medium text-xs text-muted-foreground">
+              No description available
             </div>
           )}
           {subcatcount > 0 ? (

@@ -1,22 +1,26 @@
-import { AppTitleWrapper } from '@/components';
+import { AppFormSelect, AppTitleWrapper } from '@/components';
 import AppContentWrapper from '@/components/app/wrappers/AppContentWrapper';
+import { Label } from '@/components/ui/label';
+import { queryClient } from '@/utils/api/query.client';
 import {
-  setCategoriesAll,
-  setSubcategoriesAll,
-} from '@/features/category.slice';
-import type { RootState } from '@/store';
-import { customFetch } from '@/utils/api/custom.fetch';
-import { useAppSelector } from '@/utils/hooks';
-import type { Store } from '@reduxjs/toolkit';
+  getCategoriesAll,
+  getSubcategoriesAll,
+} from '@/utils/queries/master.queries';
+import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 
 const AppAddEditProduct = () => {
   const { slug } = useParams();
   const title = slug ? 'edit product' : 'add new product';
-  const { categoriesAll, subCategoriesAll } = useAppSelector(
-    (store) => store.categories
-  );
-  console.log(subCategoriesAll);
+  const { data: categories } = useQuery({
+    queryKey: ['categories'],
+    queryFn: getCategoriesAll,
+  });
+
+  const { data: subCategories } = useQuery({
+    queryKey: ['subCategories'],
+    queryFn: getSubcategoriesAll,
+  });
 
   return (
     <div>
@@ -28,10 +32,21 @@ const AppAddEditProduct = () => {
               basic details
             </h1>
           </section>
-          <form>
+          <form className="mt-2 p-1">
             <fieldset>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-1"></div>
+              <div className="grid grid-cols-4 gap-4">
+                <div className="col-span-1">
+                  <div className="grid gap-2">
+                    <Label htmlFor="category">Category</Label>
+                    <AppFormSelect />
+                  </div>
+                </div>
+                <div className="col-span-1">
+                  <div className="grid gap-2">
+                    <Label htmlFor="category">Sub-category</Label>
+                    <AppFormSelect />
+                  </div>
+                </div>
               </div>
             </fieldset>
           </form>
@@ -44,22 +59,16 @@ export default AppAddEditProduct;
 
 // ----------------------
 
-export const loader = (store: Store<RootState>) => async () => {
-  try {
-    const responsecat = await customFetch.get(`/admin/categories/all`);
-    if (responsecat.status === 200) {
-      const { data } = responsecat.data;
-      store.dispatch(setCategoriesAll(data));
-    }
-
-    const responsesub = await customFetch.get(`/admin/sub-categories/all`);
-    if (responsesub.status === 200) {
-      const { data } = responsesub.data;
-      store.dispatch(setSubcategoriesAll(data));
-    }
-    return null;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
+export const loader = async () => {
+  await Promise.all([
+    queryClient.ensureQueryData({
+      queryKey: ['categories'],
+      queryFn: getCategoriesAll,
+    }),
+    queryClient.ensureQueryData({
+      queryKey: ['subCategories'],
+      queryFn: getSubcategoriesAll,
+    }),
+  ]);
+  return null;
 };
