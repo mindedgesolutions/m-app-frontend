@@ -1,5 +1,5 @@
 import { titles } from '@/constants';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { useEffect, useState } from 'react';
 import {
   Table,
@@ -55,7 +55,6 @@ const AppListCategories = () => {
         const response = await customFetch.get('/admin/categories', {
           params: { page, search: searchTerm },
         });
-        console.log(response);
         if (response.status === 200) {
           const { ...data } = response.data.data;
           setData(data.data);

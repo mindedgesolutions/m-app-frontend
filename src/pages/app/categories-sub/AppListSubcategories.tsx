@@ -1,5 +1,5 @@
 import { titles } from '@/constants';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { useEffect, useState } from 'react';
 import {
   Table,

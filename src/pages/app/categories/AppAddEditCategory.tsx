@@ -21,7 +21,7 @@ import { categorySchema, type CategorySchema } from '@/schemas/settings.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AppIconPicker } from '@/components';
 import { useEffect, useState } from 'react';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { showSuccess } from '@/utils/show.success';
 import { useAppDispatch, useAppSelector } from '@/utils/hooks';
 import { updateCounter } from '@/features/common.slice';

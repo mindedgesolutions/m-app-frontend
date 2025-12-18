@@ -1,6 +1,6 @@
 import { Switch } from '@/components/ui/switch';
 import { updateCounter } from '@/features/common.slice';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { useAppDispatch } from '@/utils/hooks';
 import { showSuccess } from '@/utils/show.success';
 

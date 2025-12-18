@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { updateCounter } from '@/features/common.slice';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { useAppDispatch } from '@/utils/hooks';
 import { showSuccess } from '@/utils/show.success';
 import { Trash2 } from 'lucide-react';

@@ -29,7 +29,11 @@ const router = createBrowserRouter([
             loader: ld.appSubcategoryLoader(store),
           },
           { path: 'products', element: <m.AppListProducts /> },
-          { path: 'product/:slug?', element: <m.AppAddEditProduct /> },
+          {
+            path: 'product/:slug?',
+            element: <m.AppAddEditProduct />,
+            loader: ld.appProductLoader(store),
+          },
         ],
       },
     ],

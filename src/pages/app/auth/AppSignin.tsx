@@ -14,10 +14,10 @@ import { useForm } from 'react-hook-form';
 import { signinSchema, type SigninSchema } from '@/schemas/auth.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
-import { customFetch } from '@/utils/auth/custom.fetch';
+import { customFetch } from '@/utils/api/custom.fetch';
 import { showSuccess } from '@/utils/show.success';
-import { userManager } from '@/utils/auth/user.manager';
-import { refreshFetch } from '@/utils/auth/refresh.fetch';
+import { userManager } from '@/utils/api/user.manager';
+import { refreshFetch } from '@/utils/api/refresh.fetch';
 import AppSubmitBtn from '@/components/app/shared/AppSubmitBtn';
 
 const AppSignin = () => {

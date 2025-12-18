@@ -11,8 +11,8 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import { images } from '@/constants';
 import { Button } from '@/components/ui/button';
-import { customFetch } from '@/utils/auth/custom.fetch';
-import { userManager } from '@/utils/auth/user.manager';
+import { customFetch } from '@/utils/api/custom.fetch';
+import { userManager } from '@/utils/api/user.manager';
 import { showSuccess } from '@/utils/show.success';
 
 const AppProfileContainer = () => {

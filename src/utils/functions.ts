@@ -1,7 +1,7 @@
 import { titles } from '@/constants';
-import { customFetch } from './auth/custom.fetch';
-import { userManager } from './auth/user.manager';
-import { tokenManager } from './auth/token.manager';
+import { customFetch } from './api/custom.fetch';
+import { userManager } from './api/user.manager';
+import { tokenManager } from './api/token.manager';
 
 export const logout = async () => {
   try {
