@@ -1,7 +1,7 @@
 import { customFetch } from '../api/custom.fetch';
 
 export const getCategoriesAll = async () => {
-  const response = await customFetch.get('/admin/categories/all');
+  const response = await customFetch.get(`/admin/categories/all`);
   return response.data.data;
 };
 
