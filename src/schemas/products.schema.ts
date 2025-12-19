@@ -5,3 +5,4 @@ export const productSchema = z.object({
   subCategory: z.string().min(1, 'Sub-category is required'),
   name: z.string().min(1, 'Product name is required'),
 });
+export type ProductSchema = z.infer<typeof productSchema>;

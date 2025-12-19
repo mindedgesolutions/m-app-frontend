@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [] as CategoryProps[],
-  categoriesAll: [] as CategoryProps[],
+  categoriesAll: [] as AllCategoryProps[],
   subCategories: [] as SubCategoryProps[],
-  subCategoriesAll: [] as SubCategoryProps[],
+  subCategoriesAll: [] as AllCategoryProps[],
 };
 
 const categorySlice = createSlice({
